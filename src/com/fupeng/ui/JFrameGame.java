@@ -1,4 +1,4 @@
-package com.fupeng.ui;
+ï»¿package com.fupeng.ui;
 
 import java.awt.Dimension;
 import java.awt.Toolkit;
@@ -19,7 +19,7 @@ public class JFrameGame extends JFrame{
 		width = 1200;
 		height = 730;
 		move = 15;
-		this.setTitle("Ì°³ÔÉß");
+		this.setTitle("è´ªåƒè›‡");
 		this.setSize(width, height);
 		this.setResizable(false);
 		Toolkit toolkit = Toolkit.getDefaultToolkit();

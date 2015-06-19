@@ -1,4 +1,4 @@
-package com.fupeng.dto;
+﻿package com.fupeng.dto;
 
 import com.fupeng.entity.Food;
 import com.fupeng.snake.Snake;

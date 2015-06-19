@@ -1,4 +1,4 @@
-package com.fupeng.entity;
+﻿package com.fupeng.entity;
 
 import java.awt.Component;
 

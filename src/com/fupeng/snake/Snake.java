@@ -1,4 +1,4 @@
-package com.fupeng.snake;
+﻿package com.fupeng.snake;
 
 import java.util.LinkedList;
 import java.util.Random;

@@ -1,4 +1,4 @@
-package com.fupeng.ui;
+ï»¿package com.fupeng.ui;
 
 import java.awt.Graphics;
 
@@ -27,7 +27,7 @@ public class UiGame extends UiBase {
 				}
 			}
 		}
-		//½«ÉßÍ·Ìæ»»³ÉÂÌÉ«
+		//å°†è›‡å¤´æ›¿æ¢æˆç»¿è‰²
 		int[] head = gameDto.getSnake().getSnakeList().getFirst().getPosition();
 		g.drawImage(Entity.ENTITY, x+size+head[0]*Entity.DIMENSION, y+size+head[1]*Entity.DIMENSION, 
 													x+size+(head[0]+1)*Entity.DIMENSION, y+size+(head[1]+1)*Entity.DIMENSION, 

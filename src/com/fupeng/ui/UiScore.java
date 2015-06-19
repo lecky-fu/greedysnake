@@ -1,4 +1,4 @@
-package com.fupeng.ui;
+ï»¿package com.fupeng.ui;
 
 import java.awt.Graphics;
 import java.awt.Image;
@@ -18,23 +18,23 @@ public class UiScore extends UiBase {
 	private  int num_w = NUM_IMG.getWidth(null)/nums;
 	
 	/*
-	 * Êı×ÖÍ¼Æ¬·½¿òĞòºÅ
+	 * æ•°å­—å›¾ç‰‡æ–¹æ¡†åºå·
 	 */
 	private int deep = 2;
 	
 	/*
-	 * socre´°¿Ú·ÖÎª4¸öĞ¡·½¿é£¬Ã¿¸öĞ¡·½¿éµÄ¸ß¶È
+	 * socreçª—å£åˆ†ä¸º4ä¸ªå°æ–¹å—ï¼Œæ¯ä¸ªå°æ–¹å—çš„é«˜åº¦
 	 */
 	private int disision = (h-(size<<1))>>2;
 	
 	/*
-	 *¿ªÊ¼°´Å¥ºÍÔİÍ£°´Å¥Î»ÒÆ²ÎÊı
+	 *å¼€å§‹æŒ‰é’®å’Œæš‚åœæŒ‰é’®ä½ç§»å‚æ•°
 	 */
 	private int moveX =(w-(size<<1)-point_w)>>1;
 	private int moveY =(((h-(size<<1))>>2) -point_h)>>1;
 	
 	/*
-	 *·ÖÊıÒÔ¼°µÈ¼¶ÏÔÊ¾Î»ÒÆ²ÎÊı 
+	 *åˆ†æ•°ä»¥åŠç­‰çº§æ˜¾ç¤ºä½ç§»å‚æ•° 
 	 */
 	public static int nmoveY = (((h-(size<<1))>>2) - num_h)>>1;
 	
@@ -45,22 +45,22 @@ public class UiScore extends UiBase {
 	@Override
 	public void point(Graphics g) {
 		drawWindow(g);
-		//»­³ö4¸ö·Ö¿é
+		//ç”»å‡º4ä¸ªåˆ†å—
 		drawLine(g, 5, 0, disision,size);
-		//»­·ÖÊıÏÔÊ¾±êÌâ
+		//ç”»åˆ†æ•°æ˜¾ç¤ºæ ‡é¢˜
 		drawPic(g, moveX, disision<<1, POINT_IMG);
-		//»°µÈ¼¶ÏÔÊ¾±êÌâ
+		//è¯ç­‰çº§æ˜¾ç¤ºæ ‡é¢˜
 		drawPic(g, moveX, disision*3, LEVEL_IMG);
-		//»­·ÖÊıÏÔÊ¾£¬¸ù¾İthis.gameDto.score±äÁ¿ÖµÀ´¿ØÖÆnumÍ¼Æ¬ÏÔÊ¾Êı×Ö
+		//ç”»åˆ†æ•°æ˜¾ç¤ºï¼Œæ ¹æ®this.gameDto.scoreå˜é‡å€¼æ¥æ§åˆ¶numå›¾ç‰‡æ˜¾ç¤ºæ•°å­—
 		drawScore(g,this.gameDto.score,deep);
-		//»­µÈ¼¶ÏÔÊ¾
+		//ç”»ç­‰çº§æ˜¾ç¤º
 		drawScore(g, this.gameDto.level, ++deep);
 	}
 	
 	/*
-	 * @param score ·ÖÊı
-	 * @param deepµÚ¼¸¸ö·½¿òÄÚ
-	 * ·ÖÊı»æ»­·½·¨
+	 * @param score åˆ†æ•°
+	 * @param deepç¬¬å‡ ä¸ªæ–¹æ¡†å†…
+	 * åˆ†æ•°ç»˜ç”»æ–¹æ³•
 	 */
 	private void drawScore(Graphics g,int score,int deep) {
 		String scoreString = score+"";

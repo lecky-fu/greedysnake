@@ -1,4 +1,4 @@
-package com.fupeng.ui;
+Ôªøpackage com.fupeng.ui;
 
 import java.awt.Graphics;
 import java.awt.Image;
@@ -45,28 +45,28 @@ public abstract class UiBase {
 	}
 	
 	protected void drawWindow(Graphics g){
-		//◊Û…œΩ«
+		//Â∑¶‰∏äËßí
 		g.drawImage(WINDOW, x, x, x+size, x+size, 
 				0, 0, size, size, null);
-		//…œ
+		//‰∏ä
 		g.drawImage(WINDOW, x+size, y,  x+w-size, y+size, 
 				size, 0, window_w-size, size, null);
-		//”“…œΩ«
+		//Âè≥‰∏äËßí
 		g.drawImage(WINDOW, x+w-size, y, x+w, y+size, 
 				window_w-size, 0, window_w, size, null);
-		//◊Û
+		//Â∑¶
 		g.drawImage(WINDOW, x, y+size, x+size, y+h-size, 
 				0, size, size, window_h-size, null);
-		//◊Ûœ¬
+		//Â∑¶‰∏ã
 		g.drawImage(WINDOW, x, y+h-size, x+size, y+h, 
 				0, window_h-size, size, window_h, null);
-		//œ¬
+		//‰∏ã
 		g.drawImage(WINDOW, x+size, y+h-size, x+w-size, y+h, 
 				size, window_h-size, window_w-size, window_h, null);
-		//”“œ¬
+		//Âè≥‰∏ã
 		g.drawImage(WINDOW, x+w-size, y+h-size, x+w, y+h, 
 				window_w-size, window_h-size, window_w, window_h, null);
-		//”“
+		//Âè≥
 		g.drawImage(WINDOW, x+w-size, y+size, x+w, y+h-size, 
 				window_w-size, size, window_w, window_h-size, null);
 	}

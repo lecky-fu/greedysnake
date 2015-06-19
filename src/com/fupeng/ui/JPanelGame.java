@@ -1,4 +1,4 @@
-package com.fupeng.ui;
+﻿package com.fupeng.ui;
 
 import java.awt.Graphics;
 

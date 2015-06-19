@@ -1,4 +1,4 @@
-package com.fupeng.entity;
+﻿package com.fupeng.entity;
 
 import java.util.ArrayList;
 import java.util.List;
