@@ -15,7 +15,5 @@ public class Main {
 		gameDto.jPanelGame.setGameDto(gameDto);
 		gameDto.jPanelGame.initComponet();
 		new JFrameGame(gameDto.jPanelGame);
-		System.out.println("我的第一个github项目");
 	}
-
 }
