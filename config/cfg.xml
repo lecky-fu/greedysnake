@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<game>
+	<frame width="1200" height="730"  move="15" title="贪吃蛇">
+		<layer classname="com.fupeng.ui.UiGame" x="23" y="23" w="974" h="654" size="7"></layer>
+		<layer classname="com.fupeng.ui.UiScore" x="1020" y="23" w="157" h="654" size="7" ></layer>
+	</frame>
+</game>
