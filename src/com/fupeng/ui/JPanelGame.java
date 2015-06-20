@@ -1,6 +1,7 @@
 ﻿package com.fupeng.ui;
 
 import java.awt.Graphics;
+import java.awt.event.MouseAdapter;
 import java.util.List;
 
 import javax.swing.Icon;
@@ -13,6 +14,7 @@ import com.fupeng.control.PauseControl;
 import com.fupeng.control.StartControl;
 import com.fupeng.control.PlayControl;
 import com.fupeng.dto.GameDto;
+import com.fupeng.layerconfig.ButtonConfig;
 import com.fupeng.layerconfig.FrameConfig;
 import com.fupeng.layerconfig.GameConfig;
 import com.fupeng.layerconfig.LayerConfig;
@@ -65,19 +67,24 @@ public class JPanelGame extends JPanel{
 	
 	/*
 	 * 鼠标监听按钮组件
+	 * 暂时使用这种方式初始化button属性
 	 */
 	public void initComponet(){
+		List<ButtonConfig>buttonConfigs =GameConfig.getFRAME_CONFIG().getButtonConfigs();
+		//获取startButton配置对象
+		initButton(buttonConfigs.get(0), START_ICON, new StartControl(this.gameControl));
+		//获取pauseButton配置对象
+		initButton(buttonConfigs.get(1), PAUSE_ICON, new PauseControl(this.gameControl));
+	}
+	private void initButton(ButtonConfig buttonConfig,Icon icon,MouseAdapter adapter){
 		setLayout(null);
-		
-		JButton startButton = new JButton(START_ICON);
-		startButton.setBounds(1066, 94, 64, 32);
-		startButton.addMouseListener(new StartControl(this.gameControl));
-		this.add(startButton);
-		
-		JButton pauseButton = new JButton(PAUSE_ICON);
-		pauseButton.setBounds(1066, 254, 64, 32);
-		pauseButton.addMouseListener(new PauseControl(this.gameControl));
-		this.add(pauseButton);
+		JButton jButton = new JButton(icon);
+		jButton.setBounds(buttonConfig.getX(), 
+				buttonConfig.getY(), 
+				buttonConfig.getWidth(), 
+				buttonConfig.getHeight());
+		jButton.addMouseListener(adapter);
+		this.add(jButton);
 	}
 	
 	/*

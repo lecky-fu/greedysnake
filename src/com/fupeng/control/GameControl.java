@@ -24,12 +24,21 @@ public class GameControl {
 					while(true){
 						if(coreService.getGameDto().isStart()){
 							move();
+						}
+						try {
+							//修改这里可以将snake的自动移动变为函数曲线的方式
+							//这里的移动速度需要根据等级来确定：speed=f(grade).
+							//函数time=1750/(grade+1.5)
+							Thread.sleep(timeFx(coreService.getGameDto().level));
+						} catch (InterruptedException e) {
+							e.printStackTrace();}
 					}
-					try {
-						Thread.sleep(500);
-					} catch (InterruptedException e) {
-						e.printStackTrace();}
-					}
+				}
+				/*
+				 * 睡眠时间计算函数
+				 */
+				private long timeFx(int level) {
+					return (long) (1750/(level+2.5));
 				}
 			};
 			moveThread.start();
