@@ -28,3 +28,6 @@
 	2，GameConfig类读取cfg.xml配置文件，并获取frame节点元素和两个layer节点元素
 	3，添加frame配置对象FrameConfig类，添加JFrameGame类中所需的配置属性，并获取GameConfig类中的frame元素，传递给构造器
 		在FrameConfig类中读取frame元素的属性
+	4，在JFrameGame类中使用frame元素获取layer节点对象，并创建LayerConfig对象list，在JPanelConfig类中（后续使用反射来创建）
+		创建layer对象
+-version1.1
