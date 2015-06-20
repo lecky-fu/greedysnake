@@ -1,6 +1,7 @@
 ﻿package com.fupeng.ui;
 
 import java.awt.Graphics;
+import java.util.List;
 
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
@@ -12,6 +13,9 @@ import com.fupeng.control.PauseControl;
 import com.fupeng.control.StartControl;
 import com.fupeng.control.PlayControl;
 import com.fupeng.dto.GameDto;
+import com.fupeng.layerconfig.FrameConfig;
+import com.fupeng.layerconfig.GameConfig;
+import com.fupeng.layerconfig.LayerConfig;
 
 
 public class JPanelGame extends JPanel{
@@ -29,12 +33,34 @@ public class JPanelGame extends JPanel{
 		super.paintComponent(g);
 		UiBase uiBackGround = new UiBackGround();
 		uiBackGround.point(g);
-		UiBase uiGame = new UiGame(23,23,974,654,7);
+		initLayer(g);
+		this.requestFocus();
+	}
+	
+	/*
+	 * 暂时使用这种方式初始化layer属性
+	 * 后续使用反射的方式来创建layer对象
+	 */
+	private void initLayer(Graphics g){
+		List<LayerConfig> layerConfigs = GameConfig.getFRAME_CONFIG().getLayerConfig();
+		//配置uiGame层配置
+		LayerConfig layerGame = layerConfigs.get(0);
+		UiBase uiGame =new UiGame(layerGame.getX(), 
+				layerGame.getY(), 
+				layerGame.getW(), 
+				layerGame.getH(),
+				layerGame.getSize());
 		uiGame.setGameDto(gameDto);
 		uiGame.point(g);
-		UiBase uiScore = new UiScore(1020,23,157,654,7);
+		
+		//配置uiScore层属性
+		LayerConfig layerScore = layerConfigs.get(1);
+		UiBase uiScore =new UiScore(layerScore.getX(), 
+				layerScore.getY(), 
+				layerScore.getW(), 
+				layerScore.getH(),
+				layerScore.getSize());
 		uiScore.point(g);
-		this.requestFocus();
 	}
 	
 	/*

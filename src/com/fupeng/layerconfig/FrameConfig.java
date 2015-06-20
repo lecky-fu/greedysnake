@@ -1,5 +1,8 @@
 package com.fupeng.layerconfig;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.dom4j.Element;
 
 public class FrameConfig {
@@ -9,6 +12,7 @@ public class FrameConfig {
 	private String title;
 	private boolean resizable;
 	private boolean visible;
+	private List<LayerConfig>layerConfigs=new ArrayList<LayerConfig>();
 	
 	public FrameConfig(Element frame){
 		//将传递进来的frame 元素按属性取出并存入到配置对象文件中
@@ -18,7 +22,19 @@ public class FrameConfig {
 		this.title = frame.attributeValue("title");
 		this.resizable =Boolean.parseBoolean(frame.attributeValue("Resizable"));
 		this.visible = Boolean.parseBoolean(frame.attributeValue("Visible"));
-		System.out.println("测试部分："+this.width+this.height+this.move +this.resizable +this.visible);
+		
+		//获取frame节点的layer对象
+		List<Element>layerList = frame.elements("layer");
+		for(Element ele : layerList){
+			LayerConfig layerConfig = new LayerConfig(
+					Integer.parseInt(ele.attributeValue("x")), 
+					Integer.parseInt(ele.attributeValue("y")), 
+							Integer.parseInt(ele.attributeValue("w")), 
+									Integer.parseInt(ele.attributeValue("h")), 
+											Integer.parseInt(ele.attributeValue("size")),
+													ele.attributeValue("classname"));
+			layerConfigs.add(layerConfig);
+		}
 	}
 	
 	public int getWidth() {
@@ -38,6 +54,9 @@ public class FrameConfig {
 	}
 	public String getTitle() {
 		return title;
+	}
+	public List<LayerConfig> getLayerConfig() {
+		return layerConfigs;
 	}
 	
 }
