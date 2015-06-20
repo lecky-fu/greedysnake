@@ -27,4 +27,4 @@
 	1，cfg.xml文件包括frame节点，frame节点下包括两个layer配置节点
 	2，GameConfig类读取cfg.xml配置文件，并获取frame节点元素和两个layer节点元素
 	3，添加frame配置对象FrameConfig类，添加JFrameGame类中所需的配置属性，并获取GameConfig类中的frame元素，传递给构造器
-		在FrameConfig类中赌气frame元素的属性
+		在FrameConfig类中读取frame元素的属性
