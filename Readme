@@ -30,4 +30,4 @@
 		在FrameConfig类中读取frame元素的属性
 	4，在JFrameGame类中使用frame元素获取layer节点对象，并创建LayerConfig对象list，在JPanelConfig类中（后续使用反射来创建）
 		创建layer对象
--version1.3
+-version1.4
