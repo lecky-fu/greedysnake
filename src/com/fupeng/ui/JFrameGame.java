@@ -5,6 +5,9 @@ import java.awt.Toolkit;
 
 import javax.swing.JFrame;
 
+import com.fupeng.layerconfig.FrameConfig;
+import com.fupeng.layerconfig.GameConfig;
+
 
 
 
@@ -16,17 +19,18 @@ public class JFrameGame extends JFrame{
 	private int move ;
 	
 	public JFrameGame(JPanelGame panelGame){
-		width = 1200;
-		height = 730;
-		move = 15;
-		this.setTitle("贪吃蛇");
+		FrameConfig frameConfig = GameConfig.getFRAME_CONFIG();
+		width = frameConfig.getWidth();
+		height = frameConfig.getHeight();
+		move = frameConfig.getMove();
+		this.setTitle(frameConfig.getTitle());
 		this.setSize(width, height);
-		this.setResizable(false);
+		this.setResizable(frameConfig.isResizable());
 		Toolkit toolkit = Toolkit.getDefaultToolkit();
 		Dimension screen = toolkit.getScreenSize();
 		this.setLocation((screen.width-width)>>1, ((screen.height-height)>>1)-move);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setContentPane(panelGame);
-		this.setVisible(true);
+		this.setVisible(frameConfig.isVisible());
 	}
 }
