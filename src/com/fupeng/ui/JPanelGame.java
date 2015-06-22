@@ -15,7 +15,6 @@ import com.fupeng.control.StartControl;
 import com.fupeng.control.PlayControl;
 import com.fupeng.dto.GameDto;
 import com.fupeng.layerconfig.ButtonConfig;
-import com.fupeng.layerconfig.FrameConfig;
 import com.fupeng.layerconfig.GameConfig;
 import com.fupeng.layerconfig.LayerConfig;
 

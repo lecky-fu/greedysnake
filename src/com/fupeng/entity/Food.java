@@ -29,13 +29,25 @@ public class Food extends Component implements Runnable{
 					gameDto.getGameMap()[x][y]=true;
 					gameDto.jPanelGame.repaint();
 					gameDto.jPanelGame.setVisible(true);
-					time = Snake.random.nextInt(6)+1;
-					Thread.sleep(time*1000);
+					//修改小方块出现的时间time，出现时间跟level相关 time=f(level)
+					Thread.sleep(timeFx(this.gameDto.level));
+					System.out.println(timeFx(this.gameDto.level));
 				} catch (InterruptedException e) {
 					e.printStackTrace();
 				}
 			}
 		}
+	}
+	/*
+	 * 小方块出现时间计算函数
+	 * y=-40x+740  x<=20
+	 * 		100			x>20
+	 */
+	private long timeFx(int level) {
+		if(level<=20)
+			return -40*level+940;
+		else
+			return 100;
 	}
 	
 }

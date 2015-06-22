@@ -42,6 +42,7 @@ public class UiScore extends UiBase {
 		super(x, y, w, h,size);
 	}
 
+	@SuppressWarnings("static-access")
 	@Override
 	public void point(Graphics g) {
 		drawWindow(g);

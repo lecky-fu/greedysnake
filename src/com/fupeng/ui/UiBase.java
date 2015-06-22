@@ -25,6 +25,7 @@ public abstract class UiBase {
 
 	public UiBase(){}
 	
+	@SuppressWarnings("static-access")
 	public UiBase(int x,int y,int w,int h, int size){
 		this.x=x;
 		this.y=y;

@@ -2,7 +2,6 @@
 
 import com.fupeng.control.GameControl;
 import com.fupeng.dto.GameDto;
-import com.fupeng.layerconfig.GameConfig;
 import com.fupeng.service.CoreService;
 
 public class Main {
