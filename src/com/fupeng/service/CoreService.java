@@ -15,7 +15,7 @@ public class CoreService {
 	}
 	
 	/*
-	 *把snake链表放到nap地图中去
+	 *把snake链表放到map地图中去
 	 */
 	private void initSnakeHead(){
 		Iterator<Entity> iterator = this.gameDto.getSnake().getSnakeList().iterator();
@@ -77,7 +77,6 @@ public class CoreService {
 		if(isGameOver(entity))
 			//结束游戏
 			System.exit(0);
-		
 		this.gameDto.getSnake().getSnakeList().addFirst(entity);
 		//gameDto分数变量，吃一个食物加一分
 		this.gameDto.score = this.gameDto.getSnake().getSnakeList().size()-3;

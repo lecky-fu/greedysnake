@@ -10,8 +10,6 @@ public class Food extends Component implements Runnable{
 	
 	private GameDto gameDto;
 	
-	private int time ;
-	
 	public Food(GameDto gameDto) {
 		super();
 		this.gameDto=gameDto;
@@ -31,7 +29,6 @@ public class Food extends Component implements Runnable{
 					gameDto.jPanelGame.setVisible(true);
 					//修改小方块出现的时间time，出现时间跟level相关 time=f(level)
 					Thread.sleep(timeFx(this.gameDto.level));
-					System.out.println(timeFx(this.gameDto.level));
 				} catch (InterruptedException e) {
 					e.printStackTrace();
 				}
@@ -40,7 +37,7 @@ public class Food extends Component implements Runnable{
 	}
 	/*
 	 * 小方块出现时间计算函数
-	 * y=-40x+740  x<=20
+	 * y=-40x+940  x<=20
 	 * 		100			x>20
 	 */
 	private long timeFx(int level) {
