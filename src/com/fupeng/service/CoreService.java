@@ -8,8 +8,10 @@ import com.fupeng.entity.Food;
 
 public class CoreService {
 	private GameDto gameDto;
+	private Food foodEntity = null;
 	
 	public CoreService(GameDto gameDto){
+		this.foodEntity=new Food(gameDto);
 		this.gameDto = gameDto;
 		initSnakeHead();
 	}
@@ -31,7 +33,7 @@ public class CoreService {
 	 *随机产生食物,多线程方法 
 	 */
 	public void initFood(){
-		this.gameDto.setFoodEntity(new Food(gameDto));
+		this.gameDto.setFoodEntity(foodEntity);
 		Thread foodThread = new Thread(this.gameDto.getFoodEntity());
 		foodThread.start();
 	}

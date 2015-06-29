@@ -15,7 +15,7 @@ public class GameDto {
 	
 	private Snake snake;
 	
-	private boolean start;
+	private volatile boolean start;
 	
 	private Food foodEntity;
 	
